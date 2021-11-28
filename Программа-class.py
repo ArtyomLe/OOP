@@ -32,8 +32,8 @@ class Experiment:
             print(f"{a} не делится на {b}")
 if __name__ == '__main__':
     Experiment().run()
-"""
 
+# Выводим дату
 from datetime import datetime
 class DataOut:
     def __init__(self):
@@ -41,3 +41,4 @@ class DataOut:
         print(f"Сегодня {date.day}.{date.month}.{date.year} г.")
 if __name__ == '__main__':
     DataOut()
+"""
