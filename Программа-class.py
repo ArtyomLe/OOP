@@ -22,8 +22,6 @@ class Divisibility:
 if __name__ == '__main__':
     Divisibility()
 
-"""
-
 class Experiment:
     def run(self):
         a = int(input("Введите первое число: "))
@@ -34,3 +32,12 @@ class Experiment:
             print(f"{a} не делится на {b}")
 if __name__ == '__main__':
     Experiment().run()
+"""
+
+from datetime import datetime
+class DataOut:
+    def __init__(self):
+        date = datetime.now()
+        print(f"Сегодня {date.day}.{date.month}.{date.year} г.")
+if __name__ == '__main__':
+    DataOut()
