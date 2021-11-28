@@ -37,21 +37,33 @@ class Max2:
         if a > b:
             return a
         return b
-print(Max2.getMax(10, 50))
+print(Max2.getMax(10, 50)) # Создаём ОБЪЕКТ вызываем класс по имени "Max2"
 
 # Класс = это блок кода к которому можно обратиться из другого места программы
 """
-
-class Cmn:
+# Расположенные внутри класса функции называются методами
+class MyFirstClass:
     def getSumma(a):
-        for i in range(a):
-            a += i
-        return a
-    def getMax(b):
+        s = 0
+        while (a > 0):
+            s += a % 10
+            a //= 10
+        return s
+
+
+    def getMax(a):
         m = 0
-        while (b > 0):
-            if (b % 10 > m):
-                m = b % 10
-            b //= 10
+        while (a > 0):
+            if (a % 10 > m):
+                m = a % 10
+            a //= 10
         return m
-print(Cmn.getSumma(4), Cmn.getMax(12346))
+print(MyFirstClass.getSumma(1145))
+print(MyFirstClass.getMax(45))
+
+class Slova:
+    def getPrivet(a):
+        return a
+    def getKak(b):
+        return b
+print(Slova.getPrivet("Привет,"), Slova.getKak("как дела?"))
