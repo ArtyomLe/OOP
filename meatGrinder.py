@@ -1,3 +1,7 @@
+
+
+
+
 class MeatGrinder:
     def __init__(self, material, size, holes, figure):
         self.material = material
