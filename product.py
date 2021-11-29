@@ -7,7 +7,7 @@ class Product:
         self.price = price
         self.count = count
 
-    def __str__(self):
+    def __str__(self): # Текстовое представление объекта
         return f"{self.name:22} Кол-во: {str(self.count):10} Цена: {str(self.price):10} СУММА: {str(self.getPrice()):20}"
 
     def printCurrent(self): # Вывод строки для каждого товара
