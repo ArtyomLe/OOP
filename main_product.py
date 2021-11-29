@@ -26,7 +26,7 @@ def sumAll(): # Возвращает общую сумму
     return total_cost
 
 def printTotalCost(): # Строка с общей суммой
-    pirntHead(f"ОБЩАЯ СТОИМОСТЬ: {sumAll()} руб.")
+    printHead(f"ОБЩАЯ СТОИМОСТЬ: {sumAll()} руб.")
 
 playGame = True
 while playGame:
@@ -39,4 +39,4 @@ while playGame:
         playGame = False
     elif n > 0 and n <= len(products):
         products[n - 1].menu()
-print("спешного полёта, капитан!")
+print("Успешного полёта, капитан!")
