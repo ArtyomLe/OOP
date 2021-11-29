@@ -18,3 +18,25 @@ def printList(): # Содержимое трюма в виде таблицы
     printHead("СТАТИСТИКА:")
     for i in range(len(products)):
         print(f"{(i + 1):3}. {products[i]}") # Возвращаемая строка указана в методе __str__ класса
+
+def sumAll(): # Возвращает общую сумму
+    total_cost = 0
+    for p in products:
+        total_cost += p.getPrice()
+    return total_cost
+
+def printTotalCost(): # Строка с общей суммой
+    pirntHead(f"ОБЩАЯ СТОИМОСТЬ: {sumAll()} руб.")
+
+playGame = True
+while playGame:
+    print("\n")         # Выводим пустую строку
+    printList()         # Выводим все товары в виде таблицы
+    printTotalCost()    # Выводим общую стоимость всех товаров
+
+    n = int(input("Введите номер товара, с которым желаете работать (0 - выход): "))
+    if n == 0:
+        playGame = False
+    elif n > 0 and n <= len(products):
+        products[n - 1].menu()
+print("спешного полёта, капитан!")
