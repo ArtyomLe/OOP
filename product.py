@@ -1,6 +1,7 @@
 
 class Product:
 
+    # В классе-конструкторе инициализируем поля класса
     def __init__(self, name, price, count):
         self.name = name
         self.price = price
