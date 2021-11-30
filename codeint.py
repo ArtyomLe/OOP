@@ -17,7 +17,17 @@ class CodeInt:
 
     def __add__(self, other):
         """Вызывается при СЛОЖЕНИИ, первый операнд CodeInt"""
-        return CodeInt(self.decode() + other.decode())
+
+        if isinstance(other, CodeInt):
+            # Если аргумент - обьект класса CodeInt
+            return CodeInt(self.decode() + other.decode())
+
+        elif isinstance(other, int):
+            # Если аргумент - обьект int
+            return  CodeInt(self.decode() + other)
+
+        # В любом другом случае
+        return CodeInt(self.decode()) # или (return NotImplemented)
 
     def code(self, n):
         """КОДИРУЕТ число n в строку"""
