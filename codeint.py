@@ -15,6 +15,10 @@ class CodeInt:
         """Возвращает ЦЕЛОЧИСЛЕННОЕ представление объекта"""
         return self.decode()
 
+    def __add__(self, other):
+        """Вызывается при СЛОЖЕНИИ, первый операнд CodeInt"""
+        return CodeInt(self.decode() + other.decode())
+
     def code(self, n):
         """КОДИРУЕТ число n в строку"""
         if n == 0:
