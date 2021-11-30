@@ -1,9 +1,14 @@
-n = 79
-base = 8
-res = " "
+cString = "НУПРИВЕТ"
 
-while n > 0:
-    res = str(n % base) + res           # (79 % 8 = 7)    (9 % 8 = 1)    (1 % 8 = 1)   res = "1 + 1 + 7" = 117
-    n //= base                          # (79 // 8 = 9)   (9 // 8 = 1)   (1 // 8 = 0)
+n = 97
+base = len(cString)
+res = ""
+
+if n == 0:
+    res = cString[0]
+else:
+    while n > 0:
+        res = cString[n % base] + res
+        n //= base
 
 print(res)
