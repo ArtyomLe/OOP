@@ -8,4 +8,4 @@ for i in range(n):
     cInt.append(CodeInt(randint(0, n * 5)))
 
 for c in cInt:
-    print(c)    # Выводим текстовое предсталение списка через __str__
+    print(c.digit)    # Выводим текстовое предсталение списка через в закодированном виде
