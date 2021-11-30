@@ -1,6 +1,7 @@
+
 class CodeInt:
     """Класс для хранения и обработки закодиранного значения числа int"""
-    code_string = "ABCDEFG0192837465HIJK!@#$%^&*()_+oli"
+    code_string = "ABCDEFG0192837465HIJK!@#$%^&*()_+oli" # Статическая переменная
 
     def __init__(self, a):
         """Конструктор класса.Создаёт закодированное значение"""
@@ -14,7 +15,7 @@ class CodeInt:
         """Кодирует число n в строку"""
         if n == 0:
             return CodeInt.code_string[0]
-        base = len(CodeInt.code_string)
+        base = len(CodeInt.code_string)     # 36 - тичное
         res = ""
         while n > 0:
             res = CodeInt.code_string[n % base] + res
