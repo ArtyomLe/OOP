@@ -1,0 +1,72 @@
+class Car:
+
+    def __init__(self, name, year, color, form):
+        self.name = name    # Марка
+        self.year = year    # Год выпуска
+        self.color = color  # Цвет
+        self.form = form    # Форм фактор
+		
+		from car import Car
+
+cars = []
+cars.append(Car("Polo", 1999, "White", "Hatchback"))
+cars.append(Car("Fiesta", 2014, "DeepBlue", "Hatchback"))
+cars.append(Car("Sx4", 2018, "Grey", "Hatchback"))
+
+for c in cars:
+    print(f"{c.name}, {c.form}, {c.color}, {c.year}, на дорогах уже: {2021 - c.year} года(лет)")
+	
+
+*	*	*	*	*	*
+
+
+from meatGrinder import MeatGrinder
+
+grid = []
+grid.append(MeatGrinder("Brass", 80, 3*2 + 4*2 + 5, "polygon"))
+grid.append(MeatGrinder("Steel", 86, 9, "X"))
+grid.append(MeatGrinder("Plastic", 60, 7, "+"))
+grid.append(MeatGrinder("Silver", 82, 9, "*"))
+
+for g in grid:
+    print(f"{g.material}, {g.size}, {g.holes}, {g.figure}")
+	
+	
+
+class MeatGrinder:
+    def __init__(self, material, size, holes, figure):
+        self.material = material
+        self.size = size
+        self.holes = holes
+        self.figure = figure
+		
+
+*	*	*	*	*	*
+
+
+class Worker:
+    def __init__(self, surname, name, patronymic, year, prof):              # Атрибуты класса Worker
+        self.surname = surname                                              # Набор полей (атрибутов) с разными значениями
+        self.name = name
+        self.patronymic = patronymic
+        self.year = year
+        self.prof = prof
+
+
+from worker import Worker  # Создание объекта на основе класса Worker(ввиду того что класс описан в отдельном файле, то его нужно экспортировать)
+#from имяфайла import ИмяКласа
+"""
+a = Worker("Невструев", "А-Янус", "Полуэктович", 1986, "Директор")  # Создаём обьект на основе класса и запоминаем его в переменной (a-идентификатор объекта)
+b = Worker("Зурзмансор", "Павел", "Афанасьевич", 1995, "Инженер")  # Создаём обьект на основе класса и запоминаем его в переменной (b-идентификатор объекта)
+
+print(a.surname + " " + a.name + " " + a.patronymic)
+print(b.surname + " " + b.name + " " + b.patronymic)
+"""
+a = Worker("Невструев", "А-Янус", "Полуэктович", 1986, "Директор")
+b = Worker("Зурзмансор", "Павел", "Афанасьевич", 1995, "Инженер")
+
+print(f"{a.surname}, возраст: {2021 - a.year}")
+print(f"{b.surname}, возраст: {2021 - b.year}")
+
+
+*	*	*	*	*	*	*
