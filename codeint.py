@@ -9,7 +9,7 @@ class CodeInt:
 
     def __str__(self):
         """Возвращает текстовое представление объекта"""
-        return f"Декодированное: {self.decode()}, хранится в памяти как \"{self.digit}\""   # \" \" помещаем значение в скобки ""
+        return str(self.decode())
 
     def code(self, n):
         """КОДИРУЕТ число n в строку"""
