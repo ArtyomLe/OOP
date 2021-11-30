@@ -9,10 +9,10 @@ class CodeInt:
 
     def __str__(self):
         """Возвращает текстовое представление объекта"""
-        return f"Декодированное: {self.decode()}, хранится в памяти как  \"{self.digit}\""
+        return f"Декодированное: {self.decode()}, хранится в памяти как  \"{self.digit}\""   # \" \" помещаем значение в скобки ""
 
     def code(self, n):
-        """Кодирует число n в строку"""
+        """КОДИРУЕТ число n в строку"""
         if n == 0:
             return CodeInt.code_string[0]
         base = len(CodeInt.code_string)     # 36 - тичное
@@ -23,19 +23,20 @@ class CodeInt:
         return res
 
     def decode(self):
-        """Декодирует текущую строку в число int"""
+        """ДЕКОДИРУЕТ текущую строку в число int"""
         base = len(CodeInt.code_string)
         res = 0
 
-        for i in range(len(self.digit)):
+        for i in range(len(self.digit)): # Закодированое число 100
             res = res * base + CodeInt.code_string.find(self.digit[i])
-
+          # res = 0 * 36 + 2 = 2
+          # res = 2 * 36 + 28 = 100
         return res
 
     def add(self, n):
-        """"Добавляет к текущему значению n"""
+        """"ДОБАВЛЯЕТ к текущему значению n"""
         self.digit = self.code(self.decode() + n)
 
     def sub(self, n):
-        """Вычитает из текущего значения n"""
+        """ВЫЧИТАЕТ из текущего значения n"""
         self.digit = self.code(self.decode() - n)
