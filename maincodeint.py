@@ -1,9 +1,8 @@
 
 from codeint import CodeInt
 
-score = CodeInt(100)
-print(score)
+a = CodeInt(100)
+b = CodeInt(50)
 
-# Добавляем 200 очков
-score.add(200)
-print(score)
+a.digit = a.code(a.decode() + b.decode())
+print(a)
