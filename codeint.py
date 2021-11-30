@@ -8,8 +8,12 @@ class CodeInt:
         self.digit = self.code(a)
 
     def __str__(self):
-        """Возвращает текстовое представление объекта"""
+        """Возвращает ТЕКСТОВОЕ представление объекта"""
         return str(self.decode())
+
+    def __int__(self):
+        """Возвращает ЦЕЛОЧИСЛЕННОЕ представление объекта"""
+        return self.decode()
 
     def code(self, n):
         """КОДИРУЕТ число n в строку"""
@@ -33,10 +37,10 @@ class CodeInt:
           # res = 2 * 36 + 28 = 100
         return res
 
-    def add(self, n):
-        """"ДОБАВЛЯЕТ к текущему значению n"""
-        self.digit = self.code(self.decode() + n)
+#    def add(self, n):
+#        """"ДОБАВЛЯЕТ к текущему значению n"""
+#        self.digit = self.code(self.decode() + n)
 
-    def sub(self, n):
-        """ВЫЧИТАЕТ из текущего значения n"""
-        self.digit = self.code(self.decode() - n)
+#    def sub(self, n):
+#        """ВЫЧИТАЕТ из текущего значения n"""
+#        self.digit = self.code(self.decode() - n)
