@@ -1,8 +1,11 @@
 
 from codeint import CodeInt
+from random import randint
 
-a = CodeInt(100)
-b = CodeInt(50)
+n = randint(5, 15)
+cInt = []
+for i in range(n):
+    cInt.append(CodeInt(randint(0, n * 5)))
 
-a.digit = a.code(a.decode() + b.decode())
-print(a)
+for c in cInt:
+    print(c)    # Выводим текстовое предсталение списка через __str__
