@@ -37,6 +37,14 @@ class CodeInt:
         """Вызывается при использовании знака += (self += other)"""
         return self.__add__(other)
 
+    def __gt__(self, other):
+        """Вызывается при сравнении self > other"""
+        return self.decode() > other.decode()
+
+    def __lt__(self, other):
+        """Вызывается при сравнении self < other"""
+        return self.decode() < other.decode()
+
     def code(self, n):
         """КОДИРУЕТ число n в строку"""
         if n == 0:
