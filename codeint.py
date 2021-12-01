@@ -16,7 +16,7 @@ class CodeInt:
         return self.decode()
 
     def __add__(self, other):
-        """Вызывается при СЛОЖЕНИИ, первый операнд CodeInt"""
+        """Вызывается при СЛОЖЕНИИ, ПЕРВЫЙ операнд CodeInt"""
 
         if isinstance(other, CodeInt):
             # Если аргумент - обьект класса CodeInt
@@ -28,6 +28,21 @@ class CodeInt:
 
         # В любом другом случае
         return CodeInt(self.decode()) # или (return NotImplemented)
+
+    def __radd__(self, other):
+        """Вызывается при СЛОЖЕНИИИ, ВТОРОЙ операнд CodeInt"""
+        if isinstance(other, CodeInt):
+            # Если аргумент - обьект класса CodeInt
+            return CodeInt(other.decode() + self.decode())
+
+        elif isinstance(other, int):
+            # Если аргумент - обьект int
+            return CodeInt(other + self.decode())
+
+        # В любом другом случае возвращаем константу,
+        # сообщающую, что операция не выполнена
+        return NotImplemented
+
 
     def code(self, n):
         """КОДИРУЕТ число n в строку"""
