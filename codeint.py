@@ -39,11 +39,25 @@ class CodeInt:
 
     def __gt__(self, other):
         """Вызывается при сравнении self > other"""
-        return self.decode() > other.decode()
+
+        if isinstance(other, CodeInt):
+            return self.decode() > other.decode()
+
+        elif isinstance(other, int):
+            return self.decode() > other
+
+        return NotImplemented
 
     def __lt__(self, other):
         """Вызывается при сравнении self < other"""
-        return self.decode() < other.decode()
+        if isinstance(other, CodeInt):
+            return self.decode() < other.decode()
+
+        elif isinstance(other, int):
+            return self.decode() < other
+
+        return NotImplemented
+
 
     def code(self, n):
         """КОДИРУЕТ число n в строку"""
