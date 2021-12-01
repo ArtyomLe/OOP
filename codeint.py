@@ -33,6 +33,9 @@ class CodeInt:
         """Вызывается при СЛОЖЕНИИИ, ВТОРОЙ операнд CodeInt"""
         return self.__add__(other)
 
+    def __iadd__(self, other):
+        """Вызывается при использовании знака += (self += other)"""
+        return self.__add__(other)
 
     def code(self, n):
         """КОДИРУЕТ число n в строку"""
