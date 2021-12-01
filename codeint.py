@@ -31,17 +31,7 @@ class CodeInt:
 
     def __radd__(self, other):
         """Вызывается при СЛОЖЕНИИИ, ВТОРОЙ операнд CodeInt"""
-        if isinstance(other, CodeInt):
-            # Если аргумент - обьект класса CodeInt
-            return CodeInt(other.decode() + self.decode())
-
-        elif isinstance(other, int):
-            # Если аргумент - обьект int
-            return CodeInt(other + self.decode())
-
-        # В любом другом случае возвращаем константу,
-        # сообщающую, что операция не выполнена
-        return NotImplemented
+        return self.__add__(other)
 
 
     def code(self, n):
