@@ -1,6 +1,7 @@
 
 class CodeInt:
     """Класс для хранения и обработки закодиранного значения числа int"""
+
     code_string = "ABCDEFG0192837465HIJK!@#$%^&*()_+oli" # Статическая переменная
 
     def __init__(self, a):
@@ -27,15 +28,39 @@ class CodeInt:
             return  CodeInt(self.decode() + other)
 
         # В любом другом случае
-        return CodeInt(self.decode()) # или (return NotImplemented)
+        return NotImplemented
 
     def __radd__(self, other):
         """Вызывается при СЛОЖЕНИИИ, ВТОРОЙ операнд CodeInt"""
         return self.__add__(other)
 
+    def __sub__(self, other):
+        """Вычитание self - other"""
+
+        if isinstance(other, CodeInt):
+            return CodeInt(self.decode() - other.decode())
+        elif isinstance(other, int):
+            return CodeInt(self.decode() - other)
+
+        return NotImplemented
+
+    def __rsub__(self, other):
+        """Вычитание other - self"""
+
+        if isinstance(other, CodeInt):
+            return CodeInt(other.decode() - self.decode())
+        elif isinstance(other, int):
+            return CodeInt(other - self.decode())
+
+        return NotImplemented
+
     def __iadd__(self, other):
         """Вызывается при использовании знака += (self += other)"""
         return self.__add__(other)
+
+    def __isub__(self, other):
+        """Вызывается при использовании знака -= (self -= other)"""
+        return self.__sub__(other)
 
     def __gt__(self, other):
         """Вызывается при сравнении self > other"""
@@ -50,6 +75,7 @@ class CodeInt:
 
     def __lt__(self, other):
         """Вызывается при сравнении self < other"""
+
         if isinstance(other, CodeInt):
             return self.decode() < other.decode()
 
@@ -80,11 +106,3 @@ class CodeInt:
           # res = 0 * 36 + 2 = 2
           # res = 2 * 36 + 28 = 100
         return res
-
-#    def add(self, n):
-#        """"ДОБАВЛЯЕТ к текущему значению n"""
-#        self.digit = self.code(self.decode() + n)
-
-#    def sub(self, n):
-#        """ВЫЧИТАЕТ из текущего значения n"""
-#        self.digit = self.code(self.decode() - n)
