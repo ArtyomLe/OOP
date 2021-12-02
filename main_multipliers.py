@@ -1,6 +1,6 @@
 from multipliers import Multipliers
 
-digit = Multipliers(199)
+digit = Multipliers(200)
 
 print(f"Сумма множителей: {digit.getSumMul()}")
 print(f"Число {digit.dgt}, множители: {str(digit)}")
