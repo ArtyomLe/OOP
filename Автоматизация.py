@@ -1,3 +1,3 @@
 from multipliers import Multipliers
 
-help(Multipliers)
+help(Multipliers)                # Multipliers.getMinMul для конкретного описания
